@@ -1,0 +1,135 @@
+Deepanshu Gupta
+Mobile: 9654346513 | deepanshuofficials@gmail.c om
+EDUCATION
+GGSIPU
+MC A in Computer Application
+Ma y 2020 | Delhi, India
+GGSIPU
+BC A in Computer Application
+Ma y 201 7 | Delhi, India
+LINKS
+Github:// deepanshu102
+LinkedIn:// bitsbytesofficial
+SKILLS
+PROGRAMMING
+Go•MongoDB •Java •MySQL •
+AWS-DynamoDB •Node.js •Angular
+FRAMEWORKS
+GO-Goram •GO-kit •GO-openapi •
+GO-Gin •GO-Gorilla/Mux
+•Java-Spring-Boot
+•Java-Spring-Framework
+SOFT SKILLS
+Adaptive •Positive Mindset •Team Player
+CERTIFICATES
+GO
+•Solo-learn
+MONGO
+•Udmey
+JAVA
+•NIIT Technologies ltd
+•Surjan Singh Risal Singh Memorial
+Education Society
+ANGULAR
+•NIIT Technologies ltd
+NODE.JS
+•Udmey
+PYTHON
+•Tech ExplicaCAREER OBJECTIVE
+5.2+ years experience indeveloping thehighendback-end cloud application and
+services. Experienced indeveloping server-less/DDD architecture applications
+using golang, docker, GRPC andAWS services. Self-motivated professional with
+excellent development andprogramming skills, enthusiasm tolearn newthings.
+EXPERIENCE
+KAIROS TECHNOLOGIES PVT LTD. | Senior software Engineer
+No v 2024 – Presen t | Pune, India
+•Understanding client existing product
+•Creating design documents forapplication development oftheexisting system
+•Analyzed andunderstanding ofdatabase oftheexisting system forthe
+transformation
+•Implementing andevaluating methodologies forexisting product oncloud
+•Mock testcases implementing forcode anddbconnectivity ,increasing code
+coverage activity
+•Delivered application anddemonstrate toclient
+•Deployed system using theADO pipeline tools which increased customer
+satisfaction
+•Tech Stack :Golang, GRPC, MySql, Node.js, Kubernetes, ADO
+ASCENDION ENGINEERING | Engineer
+No v 2022 – Oct 2024 | Bangal ore, India
+•Analyzed andunderstanding ofdatabase oftheexisting system forthe
+transformation with create design documents forapplication development
+•Implementing andevaluating methodologies forhealth care product incloud to
+classic platform
+•Mock testcases implementing forcode anddbconnectivity ,increasing code
+coverage activity
+•Delivered application anddemonstrate toclient
+•Deployed system using thegitlab pipeline, harness etctools which increased
+customer satisfaction
+•Tech Stack :Golang,gitlab, gorilla/mux, mongodb, gorm, testify
+COFORGE | Senior Software Engineer
+J ul y 2020 – No v,2022 | G.Noida, India
+•Platform tobeused bydealers orshopkeepers forperforming business related
+toprawn broking
+•Implemented Task prioritization andSLAframework intheprocess flow
+•Create templates forDocs generate them after mapping them inprocess
+models
+•Tech Stack :Golang, echo server, typescript ,AWS, Dynamodb, awslamdba,
+github ,Java, springboot, JPA,MySql
+NIIT TECHNOLOGIES LTD | Trainee Java Developer
+J an 2020 – J ul y,2020 | G.Noida, India
+•Platform tobeused bydealers orshopkeepers forperforming business related
+toprawn broking
+•Create templates forDocs generate them after mapping them inprocess
+models
+•Tech Stack :Java, javaspringboot, JPA,MySql, Golang ,AWS, Dynamodb, aws
+lamdba, Angular, github
+PROJECTS
+JOBSEEKERS-STOPS | serves the purpose of a Job Seekers
+J an 2020 – Apr 2020
+•Job-Stop isaproject which wehave made during ourtraining period where it
+serves thepurpose ofaJobSeekers
+•InJob-Stop, posting jobsandapplying forthose posted jobs.
+•Wehadbuilt twoseparate dashboards, where therecruiter canpost jobsand
+categorize them andmonitor theapplication onposted jobs.
+•Inthejobseeker part, weprovided thedashboard where theuser canmodify his
+profile andalsotrack thejobsheapplied forandCRUD operations.
+•Tech Stack :Java, springboot, JPA,MySql, Angular ,awslamdba, github
+E-COMMERCE PLATFORM FOR IMPRINT | A platform for
+seamless order processing, transaction m anagement, and
+dynamic category expansion
+Ma y 2019 – J ul y 2019
+•Developed anJava-based e-commerce platform forseamless order processing.
+•Enabled users toplace orders, while Admin managed transactions and
+deliveries.
+•Implemented category management, allowing Admin toexpand product
+offerings.
+•Designed asecure andefficient system forhandling daily transactions.
+•Optimized user experience forboth customers andadministrators.
+•Tech Stack :Java, springboot, JPA,MySql, Golang ,AWS, Dynamodb, aws
+lamdba, github
+SPARSH ACCUPUNCTURE | Acupuncture L earning and
+Reference Platform
+J un 2018 – Dec 2018
+•Developed aneducational website foracupuncture practitioners, enabling
+interactive learning.
+•Collaborated with ateam toapply problem-solving andanalytical skills in
+successful development anddeployment.
+•Implemented afeature forAdmin (Client) tomark acupuncture points ona
+body diagram.
+•Enabled registered users tolearn acupuncture points andtheir associated
+health benefits.
+•Delivered afullyfunctional client-approved solution, ensuring usability and
+accuracy.
+•Tech Stack :Python, Django ,mySql, github
+TRAINING PLACEMENT | provide the training and gives the
+opportunity to work with companies
+J un 2016 – J ul y 2016
+•Developed awebapplication using Java andJSPformanaging study materials
+andassignments.
+•Designed andimplemented arole-based access system forAdmin, Faculty, and
+Students.
+•Enabled Faculty toupload notes andstudy materials, accessible byStudents.
+•Implemented functionality forStudents toupload assignments forFaculty
+review.
+•Ensured smooth user registration andauthentication forallroles. operations.
+•Tech Stack :Java, JSP,MySql, github
