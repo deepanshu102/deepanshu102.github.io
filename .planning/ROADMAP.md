@@ -1,5 +1,12 @@
 # Project Roadmap
 
+## Milestone 1: Core Portfolio
+
+### Phase 1: Portfolio Implementation (COMPLETE)
+**Goal:** Build a professional static portfolio using the iPortfolio template.
+**Requirements:** Vanilla HTML/CSS/JS, Resume data integration, Mobile responsive.
+**Plans:** 0 plans (Direct migration)
+
 ## Backlog
 
 
