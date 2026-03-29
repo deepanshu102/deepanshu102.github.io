@@ -243,67 +243,12 @@
   });
 
   /**
-   * Custom Cursor Logic
-   */
-  const cursorDot = document.querySelector(".cursor-dot");
-  const cursorOutline = document.querySelector(".cursor-outline");
-  const hero = document.querySelector("#hero");
-
-  window.addEventListener("mousemove", (e) => {
-    const posX = e.clientX;
-    const posY = e.clientY;
-
-    // Direct dot positioning
-    if (cursorDot) {
-      cursorDot.style.left = `${posX}px`;
-      cursorDot.style.top = `${posY}px`;
-    }
-
-    // Smooth outline positioning
-    if (cursorOutline) {
-      cursorOutline.animate({
-        left: `${posX}px`,
-        top: `${posY}px`
-      }, { duration: 500, fill: "forwards" });
-    }
-
-    // Hero mesh tracking
-    if (hero) {
-      const xPercent = (posX / window.innerWidth) * 100;
-      const yPercent = (posY / window.innerHeight) * 100;
-      hero.style.setProperty('--mouse-x', `${xPercent}%`);
-      hero.style.setProperty('--mouse-y', `${yPercent}%`);
-    }
-  });
-
-  // Cursor scaling on hoverable elements
-  const hoverables = document.querySelectorAll('a, button, .portfolio-wrap, .resume-item');
-  hoverables.forEach(el => {
-    el.addEventListener("mouseenter", () => {
-      if (cursorOutline) {
-        cursorOutline.style.width = "70px";
-        cursorOutline.style.height = "70px";
-        cursorOutline.style.borderColor = "var(--accent-cyan)";
-        cursorOutline.style.backgroundColor = "rgba(34, 211, 238, 0.1)";
-      }
-    });
-    el.addEventListener("mouseleave", () => {
-      if (cursorOutline) {
-        cursorOutline.style.width = "40px";
-        cursorOutline.style.height = "40px";
-        cursorOutline.style.borderColor = "var(--accent-indigo)";
-        cursorOutline.style.backgroundColor = "transparent";
-      }
-    });
-  });
-
-  /**
    * Animation on scroll
    */
   window.addEventListener('load', () => {
     AOS.init({
-      duration: 800,
-      easing: 'ease-out-quart',
+      duration: 1000,
+      easing: 'ease-in-out',
       once: true,
       mirror: false
     })
