@@ -240,11 +240,13 @@ function renderContent() {
             </div>
             <div class="log-body">
                 <p>> ${exp.role} // ${exp.location}</p>
-                <ul>
+                <ul class="log-points">
                     ${exp.points.map(p => `<li>- ${p}</li>`).join('')}
                 </ul>
             </div>
-            <div class="log-tech">> TECH_STACK: ${exp.tech.join(', ')}</div>
+            <div class="log-tech-tags">
+                ${exp.tech.map(t => `<span class="tech-tag-mini">${t}</span>`).join('')}
+            </div>
         `;
         expContainer.appendChild(entry);
     });
@@ -257,22 +259,45 @@ function renderContent() {
         card.setAttribute('tabindex', '0');
         card.setAttribute('role', 'button');
         card.setAttribute('aria-label', `Project: ${proj.title}. Link to source code on back.`);
+        
+        // Performance: Use local hardening assets
+        const thumbUrl = `assets/graphics/proj-${idx+1}.png`;
+
+        const isIntelRequest = proj.link === '#request-intel';
         card.innerHTML = `
             <div class="flip-card-inner">
                 <div class="flip-card-front">
                     <div class="card-shimmer"></div>
+                    <div class="project-thumb-container">
+                        <img src="${thumbUrl}" alt="" loading="lazy" onerror="this.src='v1-legacy/assets/img/portfolio/portfolio-${idx+1}.jpg'; this.onerror=null;">
+                    </div>
                     <h3 class="project-title">${proj.title}</h3>
                     <div class="project-tags">
                         ${proj.tech.map(t => `<span class="project-tag">${t}</span>`).join('')}
                     </div>
-                    <p class="tap-hint">> HOVER_OR_ENTER_TO_DECRYPT</p>
                 </div>
                 <div class="flip-card-back" aria-hidden="true">
-                    <p>${proj.description}</p>
-                    <a href="${proj.link}" target="_blank" class="btn-glow" tabindex="-1">VIEW_SOURCE</a>
+                    <div class="project-meta">
+                        <span class="project-period">${proj.period}</span>
+                    </div>
+                    <p class="project-desc">${proj.description}</p>
+                    <div class="project-actions">
+                        <a href="${proj.link}" ${isIntelRequest ? '' : 'target="_blank"'} class="btn-glow small" tabindex="-1">
+                            ${isIntelRequest ? 'REQUEST_INTEL' : 'DECRYPT_SOURCE'}
+                        </a>
+                    </div>
                 </div>
             </div>
         `;
+
+        // Handle #request-intel clicks
+        if (isIntelRequest) {
+            card.querySelector('.btn-glow').addEventListener('click', (e) => {
+                e.preventDefault();
+                const commTrigger = document.getElementById('comm-trigger');
+                if (commTrigger) commTrigger.click();
+            });
+        }
 
         // Keyboard support for flip (Expert Pass Sync)
         const toggleFlip = (isFlipped) => {
