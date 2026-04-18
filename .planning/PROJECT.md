@@ -1,25 +1,33 @@
-# Portfolio GitHub IO Project
+# Portfolio v2.0 — Futuristic 3D Experience
 
 ## Context
-Deepanshu Gupta (Senior Software Engineer with 5.2+ years of experience) needs a highly attractive, premium web portfolio geared towards freelancing. It will be hosted on GitHub Pages (deployment handled by the user). It upgrades the existing site at https://deepanshu102.github.io/.
+Deepanshu Gupta (Senior Software Engineer with 5.2+ years of experience) is upgrading his portfolio to a "Futuristic 3D Experience". The goal is to move beyond a simple Bootstrap template to a premium, interactive site that demonstrates backend engineering depth through a high-end visual dashboard aesthetic.
 
 ## Core Value
-A stunning, modern, and dynamic personal portfolio that wows potential freelance clients, showcases technical skills (Golang, Node.js, AWS, Java, etc.), and clearly presents work experience and projects.
+A stunning, immersive 3D dashboard that "wows" freelance clients, featuring interactive WebGL/Three.js elements, terminal-style narratives, and authentic system-architecture metaphors.
 
 ## Requirements
-
-### Validated
-(None yet — ship to validate)
-
-### Active
-- [ ] Premium, highly attractive visual design (animations, modern typography, sleek UI, optimized for freelancing)
-- [ ] Freelance-focused messaging (hire me, available for freelance, contact details)
-- [ ] Responsive UI/UX (mobile-friendly)
-- [ ] About Section (Bio, 5.2+ years backend/server-less experience, skills)
-- [ ] Experience Section (Kairos, Ascendion, Coforge, NIIT)
-- [ ] Projects Section (Jobseekers-Stops, E-Commerce, Sparsh Accupuncture, etc.)
-- [ ] Education & Certifications Section
-- [ ] Links to GitHub and LinkedIn
+ 
+ ### Validated
+ - [x] Initial core portfolio details (Resume data, project list)
+ - [x] Static hosting setup (GitHub Pages)
++- [x] Premium visual design (Animations, Three.js, GSAP)
++- [x] Freelance-focused messaging & CTA Drawer
++- [x] Responsive UI/UX (Mobile fallbacks implemented)
++- [x] Content Sections (Bio, Experience, Projects)
++- [x] Education & Certifications
++- [x] Social Links (GitHub, LinkedIn)
+ 
+ ### Active
+-- [ ] Premium, highly attractive visual design (animations, modern typography, sleek UI, optimized for freelancing)
+-- [ ] Freelance-focused messaging (hire me, available for freelance, contact details)
+-- [ ] Responsive UI/UX (mobile-friendly)
+-- [ ] About Section (Bio, 5.2+ years backend/server-less experience, skills)
+-- [ ] Experience Section (Kairos, Ascendion, Coforge, NIIT)
+-- [ ] Projects Section (Jobseekers-Stops, E-Commerce, Sparsh Accupuncture, etc.)
+-- [ ] Education & Certifications Section
+-- [ ] Links to GitHub and LinkedIn
++*No active requirements in current milestone.*
 
 ### Out of Scope
 - [ ] Backend implementation (static site for GitHub Pages only)
