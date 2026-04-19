@@ -341,8 +341,8 @@ function renderContent() {
                         <span class="skill-name">${skill.name}</span>
                         <span class="skill-percentage">${skill.level}%</span>
                     </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 0%" data-width="${skill.level}%"></div>
+                    <div class="progress-bg">
+                        <div class="progress-fill" style="width: 0%" data-width="${skill.level}%"></div>
                     </div>
                 `;
                 skillsContainer.appendChild(row);
@@ -447,8 +447,9 @@ function renderContent() {
             console.warn("PROJECTS_CONTAINER_NOT_FOUND // Skipping project hydration.");
         }
 
-        // --- Post-Render Logic: Trigger Counters ---
+        // --- Post-Render Logic: Interaction Bindings ---
         initSystemCounters();
+        initProjectFlipLogic();
 
     } catch (err) {
         console.error("Hydration Error:", err);
@@ -486,7 +487,7 @@ function initAnimations() {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                const bar = entry.target.querySelector('.skill-progress');
+                const bar = entry.target.querySelector('.progress-fill');
                 if (bar) bar.style.width = bar.getAttribute('data-width');
             }
         });
@@ -526,13 +527,33 @@ function initSystemCounters() {
         gsap.to(metric, {
             scrollTrigger: {
                 trigger: metric,
-                start: "top 90%",
+                start: "top 80%", /* Accelerated trigger v12.0 */
                 once: true
             },
             innerHTML: target,
             duration: 2,
             snap: { innerHTML: 1 },
             ease: "power2.out"
+        });
+    });
+}
+
+// --- Project Interaction Hardening v12.0 ---
+function initProjectFlipLogic() {
+    document.querySelectorAll('.flip-card-3d').forEach(card => {
+        // Handle touch/click for mobile discoverability
+        card.addEventListener('click', (e) => {
+            // Only toggle if not clicking the "VIEW SOURCE" link inside
+            if (!e.target.closest('.btn-glow')) {
+                card.classList.toggle('flipped');
+            }
+        });
+        
+        // Ensure keyboard accessibility
+        card.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                card.classList.toggle('flipped');
+            }
         });
     });
 }
