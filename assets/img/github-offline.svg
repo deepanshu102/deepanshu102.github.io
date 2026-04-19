@@ -1,0 +1,9 @@
+<svg width="400" height="150" viewBox="0 0 400 150" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="150" fill="#000814" rx="4"/>
+  <rect width="400" height="150" fill="none" stroke="#00f5ff" stroke-width="1" stroke-opacity="0.2" rx="4"/>
+  <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#00f5ff" font-family="monospace" font-size="14" opacity="0.8">
+    // ACTIVITY_FEED_OFFLINE
+  </text>
+  <path d="M 10 10 L 30 10" stroke="#00f5ff" stroke-width="0.5" opacity="0.5"/>
+  <path d="M 370 140 L 390 140" stroke="#00f5ff" stroke-width="0.5" opacity="0.5"/>
+</svg>
