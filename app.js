@@ -1,10 +1,6 @@
-/**
- * Portfolio v2.0 - Core Engine
- * Stack: Three.js + GSAP + Vanilla JS
- */
-
-import * as THREE from 'https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.0/three.module.min.js';
 import { CONTENT } from './content.js';
+
+// GSAP and THREE are provided as globals via index.html <script> tags.
 
 // --- Configuration ---
 const CONFIG = {
@@ -152,9 +148,6 @@ class ParticleEngine {
         this.points = new THREE.Points(geometry, material);
         this.scene.add(this.points);
 
-        this.points = new THREE.Points(geometry, material);
-        this.scene.add(this.points);
-
         window.addEventListener('resize', () => this.onResize());
         window.addEventListener('mousemove', (e) => this.onMouseMove(e));
         
@@ -230,12 +223,17 @@ function renderContent() {
 
     // Experience
     const expContainer = document.getElementById('experience-timeline');
-    CONTENT.experience.forEach(exp => {
+    CONTENT.experience.forEach((exp, idx) => {
         const entry = document.createElement('div');
         entry.className = 'log-entry';
+        const isCurrent = idx === 0;
+
         entry.innerHTML = `
             <div class="log-header">
-                <span class="log-company">${exp.company}</span>
+                <span class="log-company">
+                    ${exp.company}
+                    ${isCurrent ? '<span class="status-badge pulsing">CURRENT</span>' : ''}
+                </span>
                 <span class="log-period">[ ${exp.period} ]</span>
             </div>
             <div class="log-body">
@@ -249,6 +247,22 @@ function renderContent() {
             </div>
         `;
         expContainer.appendChild(entry);
+    });
+
+    // Commendations [NEW]
+    const commsGrid = document.getElementById('commendations-grid');
+    CONTENT.commendations.forEach(comm => {
+        const card = document.createElement('div');
+        card.className = 'holo-card comm-card';
+        card.innerHTML = `
+            <div class="card-inner">
+                <div class="comm-icon">VALIDATOR_CERT</div>
+                <h3 class="comm-title">${comm.title}</h3>
+                <p class="comm-org">${comm.organization} // ${comm.year}</p>
+                <p class="comm-desc">${comm.description}</p>
+            </div>
+        `;
+        commsGrid.appendChild(card);
     });
 
     // Projects
@@ -514,16 +528,6 @@ function initAnimations() {
         }
     });
 
-    // Side Nav Logic
-    const navItems = document.querySelectorAll('#side-nav li');
-    navItems.forEach(item => {
-        item.addEventListener('click', () => {
-            const targetId = item.dataset.section;
-            gsap.to(window, { duration: 1, scrollTo: `#${targetId}`, ease: "power2.inOut" });
-        });
-    });
-
-    initCommDrawer();
 
     // Initialize Master Lifecycle (Phase 2.4.2 Hardening)
     initMasterLifecycle();
@@ -592,13 +596,114 @@ function initCommDrawer() {
             toggleDrawer(false);
         }
     });
+}/**
+ * Contact Form Logic
+ * Adds visual feedback for form submission
+ */
+function initContactForm() {
+    const form = document.getElementById('contact-form');
+    if (!form) return;
+
+    form.addEventListener('submit', (e) => {
+        // Since we use mailto, the browser will open the mail client.
+        // We add a visual confirmation that the 'uplink' was initiated.
+        const btn = form.querySelector('button');
+        const originalText = btn.textContent;
+        
+        btn.textContent = 'UPLINK_SUCCESSFUL // TRANSMISSION_SENT';
+        btn.style.background = 'rgba(0, 255, 136, 0.2)';
+        btn.style.borderColor = 'var(--success-green)';
+        
+        setTimeout(() => {
+            btn.textContent = originalText;
+            btn.style.background = '';
+            btn.style.borderColor = '';
+            form.reset();
+        }, 5000);
+    });
 }
 
-// Start sequence
-initCircuitBackground();
-runBootSequence().then(() => {
-    renderContent();
-    initAnimations();
-    initGlitchEffect();
-});
-new ParticleEngine();
+/**
+ * System Counters (Facts Section)
+ * Animates performance metrics when visible
+ */
+function initSystemCounters() {
+    const metrics = document.querySelectorAll('.metric-value');
+    
+    metrics.forEach(metric => {
+        const target = parseInt(metric.dataset.target);
+        
+        gsap.to(metric, {
+            scrollTrigger: {
+                trigger: metric,
+                start: "top 85%",
+                once: true
+            },
+            innerHTML: target,
+            duration: 2,
+            snap: { innerHTML: 1 },
+            ease: "power2.out"
+        });
+    });
+}
+
+/**
+ * Side Navigation Logic
+ * Handles active section tracking and smooth scrolling
+ */
+function initSideNav() {
+    const sections = document.querySelectorAll('.page-section, #hero');
+    const navItems = document.querySelectorAll('#side-nav li');
+
+    const updateNav = () => {
+        let current = 'hero';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            if (window.pageYOffset >= sectionTop - 200) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        navItems.forEach(item => {
+            item.classList.remove('active');
+            if (item.getAttribute('data-section') === current) {
+                item.classList.add('active');
+            }
+        });
+    };
+
+    window.addEventListener('scroll', updateNav);
+    navItems.forEach(item => {
+        item.addEventListener('click', () => {
+            const target = document.getElementById(item.getAttribute('data-section'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
+}
+
+// --- Start Sequence [Expert Pass Lifecycle] ---
+(async function() {
+    try {
+        console.log("System initialization initiated...");
+        initCircuitBackground();
+        await runBootSequence();
+        renderContent();
+        initAnimations();
+        initGlitchEffect();
+        initCommDrawer();
+        initSideNav();
+        initSystemCounters();
+        initContactForm();
+        new ParticleEngine();
+        console.log("System online.");
+    } catch (err) {
+        console.warn("System kernel encountered an initialization error. Activating fail-safe...", err);
+        const loader = document.getElementById('loader-overlay');
+        const main = document.getElementById('main-content');
+        if (loader) loader.style.display = 'none';
+        if (main) main.style.opacity = 1;
+        renderContent();
+    }
+})();

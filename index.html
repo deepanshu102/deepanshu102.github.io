@@ -40,6 +40,8 @@
             <li data-section="about"><span>01</span> // ABOUT</li>
             <li data-section="experience"><span>02</span> // EXPERIENCE</li>
             <li data-section="projects"><span>03</span> // PROJECTS</li>
+            <li data-section="contact"><span>04</span> // CONTACT</li>
+        </ul>
         </ul>
     </nav>
 
@@ -49,12 +51,13 @@
             <div class="container">
                 <div class="status-indicator">
                     <span class="status-dot pulsing"></span>
-                    <span class="status-text">SYSTEM ACTIVE // AVAILABLE FOR HIRE</span>
+                    <span class="status-text">SYSTEM ACTIVE // AVAILABLE FOR FREELANCE</span>
                 </div>
                 <h1 class="glitch-text" data-text="DEEPANSHU GUPTA">DEEPANSHU GUPTA</h1>
                 <p class="subtitle">System Architect • Backend Engineer • Cloud Specialist</p>
                 <div class="hero-cta">
-                    <a href="#about" class="btn-glow">ESTABLISH CONNECTION</a>
+                    <a href="#contact" class="btn-glow">AVAILABLE FOR FREELANCE // LET'S BUILD</a>
+                    <a href="assets/deepanshu-gupta-resume.pdf" target="_blank" class="btn-outline">DOWNLOAD_INTEL (CV)</a>
                 </div>
             </div>
         </section>
@@ -79,6 +82,38 @@
                         <div id="skills-container"></div>
                     </div>
                 </div>
+
+                <!-- System Metrics (Facts) [RESTORED] -->
+                <div id="system-metrics" class="holo-card">
+                    <div class="dashboard-header">SYSTEM_PERFORMANCE_METRICS</div>
+                    <div class="metrics-grid">
+                        <div class="metric-item">
+                            <span class="metric-value" data-target="52">0</span>
+                            <span class="metric-label">MICROSERVICES_DEPLOYED</span>
+                        </div>
+                        <div class="metric-item">
+                            <span class="metric-value" data-target="12">0</span>
+                            <span class="metric-label">CLOUD_SYSTEMS_MANAGED</span>
+                        </div>
+                        <div class="metric-item">
+                            <span class="metric-value" data-target="85">0</span>
+                            <span class="metric-label">UNIT_TEST_COVERAGE_%</span>
+                        </div>
+                        <div class="metric-item">
+                            <span class="metric-value" data-target="15">0</span>
+                            <span class="metric-label">AWARDED_CREDENTIALS</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- System Proof (GitHub Activity) [LIVE INTEGRATION] -->
+                <div id="system-proof" class="holo-card">
+                    <div class="dashboard-header">SYSTEM_ACTIVITY_LOG (GITHUB)</div>
+                    <div class="github-activity-container">
+                        <img src="https://github-readme-stats.vercel.app/api?username=deepanshu102&show_icons=true&theme=tokyonight&hide_border=true&bg_color=00000000" alt="GitHub Stats" loading="lazy" class="github-stats-img">
+                        <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=deepanshu102&layout=compact&theme=tokyonight&hide_border=true&bg_color=00000000" alt="Top Languages" loading="lazy" class="github-stats-img">
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -87,8 +122,19 @@
             <div class="container">
                 <div class="section-header">
                     <h2 class="section-title">02 // SYSTEM_LOGS</h2>
+                    <span class="section-subtitle">// PROFESSIONAL_EXPERIENCE_HISTORY</span>
                 </div>
                 <div id="experience-timeline" class="terminal-log" aria-live="polite"></div>
+            </div>
+        </section>
+
+        <!-- Commendations Section [NEW] -->
+        <section id="commendations" class="page-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">02.1 // EXTERNAL_VALUATION</h2>
+                </div>
+                <div id="commendations-grid" class="commendations-container"></div>
             </div>
         </section>
 
@@ -97,8 +143,52 @@
             <div class="container">
                 <div class="section-header">
                     <h2 class="section-title">03 // ACTIVE_PROJECTS</h2>
+                    <span class="section-subtitle">// DISTRIBUTED_SYSTEMS_&_ARCHITECTURE</span>
                 </div>
                 <div id="projects-grid" class="projects-container"></div>
+            </div>
+        </section>
+
+        <!-- Contact Section [NEW STATIC SECTION] -->
+        <section id="contact" class="page-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">04 // ESTABLISH_UPLINK</h2>
+                </div>
+                <div class="contact-grid">
+                    <div class="contact-methods holo-card">
+                        <div class="card-inner">
+                            <h3>// PRIMARY_CHANNELS</h3>
+                            <a href="mailto:deepanshuofficials@gmail.com" class="comm-link">
+                                <span class="link-label">EMAIL:</span>
+                                <span class="link-value">deepanshuofficials@gmail.com</span>
+                            </a>
+                            <a href="https://www.linkedin.com/in/bitsbytesofficial/" target="_blank" class="comm-link">
+                                <span class="link-label">LINKEDIN:</span>
+                                <span class="link-value">/in/bitsbytesofficial</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="contact-form-container holo-card">
+                        <div class="card-inner">
+                            <form id="contact-form" class="terminal-form" action="mailto:deepanshuofficials@gmail.com" method="POST" enctype="text/plain">
+                                <div class="form-group">
+                                    <label>> SOURCE_NAME:</label>
+                                    <input type="text" name="name" required placeholder="// NAME_IDENTIFIER">
+                                </div>
+                                <div class="form-group">
+                                    <label>> RETURN_ADDRESS:</label>
+                                    <input type="email" name="email" required placeholder="// TRANSMISSION_ADDRESS">
+                                </div>
+                                <div class="form-group">
+                                    <label>> TRANSMISSION_DATA:</label>
+                                    <textarea name="message" required placeholder="// MESSAGE_PAYLOAD"></textarea>
+                                </div>
+                                <button type="submit" class="btn-glow">SEND_UPLINK</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -111,6 +201,7 @@
         <div id="comm-drawer" aria-hidden="true">
             <div class="drawer-header">
                 <h3>// SYSTEM_COMMUNICATIONS</h3>
+                <span class="drawer-subtitle">CONTACT & INQUIRIES</span>
                 <button id="close-drawer" aria-label="Close Drawer">×</button>
             </div>
             <div class="drawer-content">
@@ -119,9 +210,9 @@
                     <span>ENCRYPTED_LINE_ACTIVE</span>
                 </div>
                 <div class="comm-links">
-                    <a href="mailto:deepanshuofficials+pro@gmail.com" class="comm-link">
+                    <a href="mailto:deepanshuofficials@gmail.com" class="comm-link">
                         <span class="link-label">EMAIL:</span>
-                        <span class="link-value">deepanshuofficials+pro@gmail.com</span>
+                        <span class="link-value">deepanshuofficials@gmail.com</span>
                     </a>
                     <a href="https://www.linkedin.com/in/bitsbytesofficial/" target="_blank" class="comm-link">
                         <span class="link-label">LINKEDIN:</span>
@@ -133,7 +224,7 @@
                     </a>
                 </div>
                 <div class="drawer-footer">
-                    <a href="#resume-placeholder" class="btn-glow">DOWNLOAD_INTEL (RESUME)</a>
+                    <a href="assets/deepanshu-gupta-resume.pdf" target="_blank" class="btn-glow">DOWNLOAD_INTEL (RESUME PDF)</a>
                 </div>
             </div>
         </div>
