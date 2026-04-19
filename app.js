@@ -422,7 +422,7 @@ function renderContent() {
                 card.innerHTML = `
                     <div class="flip-card-inner">
                         <div class="flip-card-front">
-                            <div class="project-thumb">
+                            <div class="project-thumb-container">
                                 <img src="${thumbUrl}" alt="${proj.title} Layout" onerror="this.src='https://placehold.co/600x400/000814/00f5ff?text=SYSTEM_SCAN_PENDING'; this.style.opacity='0.5';">
                             </div>
                             <div class="project-info">

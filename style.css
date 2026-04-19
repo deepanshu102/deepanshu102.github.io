@@ -153,10 +153,10 @@ body {
     position: relative;
     z-index: 2;
     min-height: 100vh;
-    padding: 12rem 0; /* Standard rhythm for deep separation */
+    padding: 6rem 0; /* Balanced rhythm: separates sections without creating voids */
     display: flex;
     align-items: center;
-    border-bottom: 1px solid rgba(0, 245, 255, 0.15); /* Subtle 15%-opacity neon divider */
+    border-bottom: 1px solid rgba(0, 245, 255, 0.1); 
 }
 
 /* Hero Separation Exclusion - Prevents name pushdown */
@@ -569,7 +569,7 @@ body {
 
 .flip-card-3d {
     background: transparent;
-    height: 350px;
+    min-height: 450px; /* Increased to stabilize architecture diagrams */
     perspective: 1000px;
 }
 
@@ -645,8 +645,9 @@ body {
 .project-thumb-container img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    filter: grayscale(1) contrast(1.2) brightness(0.8);
+    object-fit: contain; /* Prevents overflow into neighboring sections */
+    background: rgba(0, 0, 0, 0.2);
+    filter: grayscale(0.2) contrast(1.1);
     transition: transform 0.5s, filter 0.5s;
 }
 
@@ -950,48 +951,7 @@ h1 {
         transform: translateX(-100%);
     }
 }
-/* Adaptive Theme: Light Mode Support (Refined Spec v3) */
-@media (prefers-color-scheme: light) {
-    :root {
-        --bg-color: #f8f8f2; /* Off-white requested */
-        --text-main: #0d1117; /* Dark navy requested */
-        --text-dim: #4a5568;
-        --primary-cyan: #008a94; /* High saturation for visibility */
-        --accent-purple: #6b21a8;
-        --card-bg: rgba(255, 255, 255, 0.95);
-        --glow-cyan: none;
-        --glow-green: none;
-    }
-    
-    .holo-card {
-        border: 1px solid rgba(0, 138, 148, 0.2);
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-    }
-    
-    h1, h2, h3, .section-title, .dashboard-header {
-        color: #0d1117; /* Dark ink headers */
-        text-shadow: none !important;
-    }
-    
-    .status-dot.pulsing {
-        box-shadow: none;
-    }
-    
-    .terminal-log::before {
-        background: repeating-linear-gradient(
-            to bottom,
-            transparent,
-            transparent 5px,
-            var(--primary-cyan) 5px,
-            var(--primary-cyan) 10px
-        );
-        opacity: 0.15;
-    }
-    
-    .log-entry::before {
-        background: #f8f8f2;
-    }
-}
+/* Note: Adaptive Theme (Light Mode) has been removed to prioritize the Premium Cyberpunk Brand Identity. */
 
 /* Mobile Name Wrap Fix */
 @media (max-width: 480px) {
