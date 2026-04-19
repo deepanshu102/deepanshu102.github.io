@@ -711,13 +711,13 @@ body {
 /* Project Cards */
 .projects-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); /* High-focus grid for large-scale diagrams */
+    gap: 3rem;
 }
 
 .flip-card-3d {
     background: transparent;
-    min-height: 450px; /* Increased to stabilize architecture diagrams */
+    min-height: 650px; /* Massive expansion for architectural visibility */
     perspective: 1000px;
 }
 
@@ -782,7 +782,7 @@ body {
 
 .project-thumb-container {
     width: 100%;
-    height: 150px;
+    height: 400px; /* Expanded to 400px to allow diagrams to lead */
     background: rgba(0, 0, 0, 0.3);
     margin-bottom: 1.5rem;
     overflow: hidden;
@@ -793,9 +793,9 @@ body {
 .project-thumb-container img {
     width: 100%;
     height: 100%;
-    object-fit: contain; /* Prevents overflow into neighboring sections */
+    object-fit: contain; /* Precise containment for technical diagrams */
     background: rgba(0, 0, 0, 0.2);
-    filter: grayscale(0.2) contrast(1.1);
+    filter: none; /* Restored full color for maximum technical impact */
     transition: transform 0.5s, filter 0.5s;
 }
 
