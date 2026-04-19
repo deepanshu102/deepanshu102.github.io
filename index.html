@@ -256,6 +256,25 @@
         </footer>
     </main>
 
+    <!-- System Navigator AI [Definitive Spec v11.0] -->
+    <div id="system-navigator" aria-label="System Navigator AI" class="minimized">
+        <div class="navigator-header">
+            <span class="status-dot pulsing"></span>
+            <span class="nav-title">SYS_ASSISTANT_v11.0</span>
+            <button id="toggle-navigator" aria-label="Minimize/Expand">_</button>
+        </div>
+        <div class="navigator-body">
+            <div id="navigator-history">
+                <div class="msg bot">SYSTEM_ONLINE // DEEPANSHU_OS_ASSISTANT READY.</div>
+                <div class="msg bot">Try: "Show Projects", "Experience", or "Hire".</div>
+            </div>
+            <div class="navigator-input-line">
+                <span class="prompt">></span>
+                <input type="text" id="navigator-input" placeholder="Enter command..." autocomplete="off">
+            </div>
+        </div>
+    </div>
+
     <script src="app.js?v=7.1.0"></script>
 </body>
 </html>

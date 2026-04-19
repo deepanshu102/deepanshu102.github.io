@@ -1101,13 +1101,103 @@ h1 {
 }
 /* Note: Adaptive Theme (Light Mode) has been removed to prioritize the Premium Cyberpunk Brand Identity. */
 
-/* Mobile Name Wrap Fix */
-@media (max-width: 480px) {
-    h1 {
-        font-size: 2.2rem;
-        letter-spacing: 0.05em;
-    }
-    .subtitle {
-        letter-spacing: 0.1em;
+/* System Navigator AI [Definitive Spec v11.0] */
+#system-navigator {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 320px;
+    background: rgba(0, 8, 20, 0.9);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(0, 245, 255, 0.2);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    z-index: 600;
+    font-family: var(--font-mono);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    flex-direction: column;
+}
+
+#system-navigator.minimized {
+    height: 40px;
+    overflow: hidden;
+    width: 200px;
+    opacity: 0.8;
+}
+
+.navigator-header {
+    background: rgba(0, 245, 255, 0.1);
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    cursor: pointer;
+}
+
+.nav-title {
+    font-size: 0.7rem;
+    color: var(--primary-cyan);
+    letter-spacing: 0.1em;
+    flex-grow: 1;
+}
+
+#toggle-navigator {
+    background: transparent;
+    border: none;
+    color: var(--text-dim);
+    cursor: pointer;
+    font-family: var(--font-mono);
+    line-height: 1;
+}
+
+.navigator-body {
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+#navigator-history {
+    flex-grow: 1;
+    overflow-y: auto;
+    font-size: 0.75rem;
+    margin-bottom: 1rem;
+    padding-right: 0.5rem;
+}
+
+#navigator-history::-webkit-scrollbar { width: 4px; }
+#navigator-history::-webkit-scrollbar-thumb { background: rgba(0, 245, 255, 0.2); }
+
+.msg { margin-bottom: 0.75rem; line-height: 1.4; }
+.msg.bot { color: var(--primary-cyan); opacity: 0.9; }
+.msg.user { color: var(--text-main); text-align: left; }
+.msg.user::before { content: '> '; opacity: 0.5; }
+
+.navigator-input-line {
+    display: flex;
+    gap: 0.5rem;
+    border-top: 1px solid rgba(0, 245, 255, 0.1);
+    padding-top: 0.75rem;
+    align-items: center;
+}
+
+.navigator-input-line .prompt { color: var(--primary-cyan); font-weight: bold; }
+
+#navigator-input {
+    background: transparent;
+    border: none;
+    color: var(--text-main);
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    width: 100%;
+    outline: none;
+}
+
+@media (max-width: 768px) {
+    #system-navigator {
+        bottom: 1rem;
+        right: 1rem;
+        width: calc(100% - 2rem);
+        max-width: 320px;
     }
 }

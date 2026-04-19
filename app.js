@@ -3,7 +3,7 @@
  * Consolidated for fail-safe rendering in all environments.
  */
 const CONTENT = {
-    bio: "Senior Software Engineer with 5.2+ years of experience in developing high-end back-end cloud applications and services. Specializing in Golang, Distributed Systems, and Microservices Architecture with a focus on high-scale enterprise transformations.",
+    bio: "Architect of Resilience. Beyond 5.2 years of deployment metrics, I thrive in the deep-end of high-performance backend engineering. Orchestrating high-scale distributed systems isn't just a role—it's an obsessive pursuit of architectural elegance and the raw intellectual joy of building resilient cloud-native ecosystems.",
     
     email: "deepanshuofficials@gmail.com",
     linkedin: "https://www.linkedin.com/in/bitsbytesofficial/",
@@ -629,6 +629,71 @@ function initSideNav() {
     });
 }
 
+// --- System Navigator AI [Definitive Spec v11.0] ---
+function initSystemNavigator() {
+    const nav = document.getElementById('system-navigator');
+    const input = document.getElementById('navigator-input');
+    const history = document.getElementById('navigator-history');
+    const toggle = document.getElementById('toggle-navigator');
+    const header = document.querySelector('.navigator-header');
+
+    if (!nav || !input || !history || !toggle || !header) return;
+
+    const addMessage = (text, type = 'bot') => {
+        const msg = document.createElement('div');
+        msg.className = `msg ${type}`;
+        msg.textContent = text;
+        history.appendChild(msg);
+        history.scrollTop = history.scrollHeight;
+    };
+
+    const handleCommand = (cmd) => {
+        const inputVal = cmd.toLowerCase().trim();
+        addMessage(cmd, 'user');
+
+        setTimeout(() => {
+            if (inputVal.includes('project') || inputVal.includes('work') || inputVal.includes('build')) {
+                addMessage('ROUTING // Active Projects Section...');
+                const target = document.getElementById('projects');
+                if (target) window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' });
+            } 
+            else if (inputVal.includes('experience') || inputVal.includes('career') || inputVal.includes('log')) {
+                addMessage('ROUTING // System Logs Section...');
+                const target = document.getElementById('experience');
+                if (target) window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' });
+            }
+            else if (inputVal.includes('contact') || inputVal.includes('hire') || inputVal.includes('email')) {
+                addMessage('ROUTING // Communications Uplink...');
+                const target = document.getElementById('contact');
+                if (target) window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' });
+            }
+            else if (inputVal.includes('about') || inputVal.includes('bio') || inputVal.includes('who')) {
+                addMessage('ROUTING // Core Identity Scan...');
+                const target = document.getElementById('hero');
+                if (target) window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' });
+            }
+            else if (inputVal.includes('hi') || inputVal.includes('hello')) {
+                addMessage('GREETINGS_VISITOR // How can I assist your architectural audit?');
+            }
+            else {
+                addMessage('ERROR // Command unrecognized. Try "Projects", "Experience", or "Contact".');
+            }
+        }, 500);
+    };
+
+    header.addEventListener('click', () => {
+        nav.classList.toggle('minimized');
+        toggle.textContent = nav.classList.contains('minimized') ? '_' : '×';
+    });
+
+    input.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter' && input.value.trim()) {
+            handleCommand(input.value);
+            input.value = '';
+        }
+    });
+}
+
 // --- Boot Lifecycle [Expert Pass] ---
 (async function() {
     try {
@@ -645,6 +710,7 @@ function initSideNav() {
         initGlitchEffect();
         initCommDrawer();
         initSideNav();
+        initSystemNavigator();
         initContactForm();
         new ParticleEngine();
         
