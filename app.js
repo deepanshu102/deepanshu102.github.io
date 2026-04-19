@@ -574,16 +574,29 @@ function initCommDrawer() {
     });
 }
 
-// --- Side Nav ---
+// --- Side Nav [Refined v9.1] ---
 function initSideNav() {
     const sections = document.querySelectorAll('.page-section, #hero');
     const navItems = document.querySelectorAll('#side-nav li');
+    const mobileToggle = document.getElementById('mobile-nav-toggle');
+    const sideNav = document.getElementById('side-nav');
+
+    // Mobile Toggle Logic
+    if (mobileToggle && sideNav) {
+        mobileToggle.addEventListener('click', () => {
+            const isOpen = mobileToggle.classList.contains('open');
+            mobileToggle.classList.toggle('open');
+            sideNav.classList.toggle('open');
+            mobileToggle.setAttribute('aria-expanded', !isOpen);
+        });
+    }
 
     const updateNav = () => {
         let current = 'hero';
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
-            if (window.pageYOffset >= sectionTop - 250) {
+            // Precise v9.1 threshold for 6rem padding
+            if (window.pageYOffset >= sectionTop - 300) {
                 current = section.getAttribute('id');
             }
         });
@@ -594,10 +607,24 @@ function initSideNav() {
     };
 
     window.addEventListener('scroll', updateNav);
+    
     navItems.forEach(item => {
         item.addEventListener('click', () => {
             const target = document.getElementById(item.dataset.section);
-            if (target) target.scrollIntoView({ behavior: 'smooth' });
+            if (target) {
+                // Tactical Close on Mobile
+                if (window.innerWidth <= 768) {
+                    mobileToggle.classList.remove('open');
+                    sideNav.classList.remove('open');
+                }
+                
+                // Hard-coded v9.1 offset bond [offsetTop - 80]
+                const targetPos = target.offsetTop - 80;
+                window.scrollTo({
+                    top: targetPos,
+                    behavior: 'smooth'
+                });
+            }
         });
     });
 }
