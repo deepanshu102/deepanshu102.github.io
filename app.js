@@ -329,27 +329,28 @@ function renderContent() {
             console.warn("BIO_CONTAINER_NOT_FOUND // Skipping bio hydration.");
         }
 
-        // Skills
-        const skillsContainer = document.getElementById('skills-container');
-        if (skillsContainer) {
-            skillsContainer.innerHTML = ''; 
-            CONTENT.skills.forEach(skill => {
-                const row = document.createElement('div');
-                row.className = 'skill-row';
-                row.innerHTML = `
-                    <div class="skill-info">
-                        <span class="skill-name">${skill.name}</span>
-                        <span class="skill-percentage">${skill.level}%</span>
-                    </div>
-                    <div class="progress-bg">
-                        <div class="progress-fill" style="width: 0%" data-width="${skill.level}%"></div>
-                    </div>
-                `;
-                skillsContainer.appendChild(row);
-            });
-        } else {
-            console.warn("SKILLS_CONTAINER_NOT_FOUND // Skipping skills hydration.");
-        }
+        // Skills [v12.1 Refinement]
+        const skillTargets = ['skills-container', 'skills-about-preview'];
+        skillTargets.forEach(targetId => {
+            const container = document.getElementById(targetId);
+            if (container) {
+                container.innerHTML = '';
+                CONTENT.skills.forEach(skill => {
+                    const row = document.createElement('div');
+                    row.className = 'skill-row';
+                    row.innerHTML = `
+                        <div class="skill-info">
+                            <span class="skill-name">${skill.name}</span>
+                            <span class="skill-percentage">${skill.level}%</span>
+                        </div>
+                        <div class="progress-bg">
+                            <div class="progress-fill" style="width: 0%" data-width="${skill.level}%"></div>
+                        </div>
+                    `;
+                    container.appendChild(row);
+                });
+            }
+        });
 
         // Experience
         const expContainer = document.getElementById('experience-timeline');
