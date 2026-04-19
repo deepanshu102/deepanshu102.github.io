@@ -34,8 +34,8 @@ const CONTENT = {
             period: "Nov 2024 – Present",
             location: "Pune, India",
             points: [
-                "Leading the Macro-service transition and architecting a hybrid model to consolidate distributed services into modular components, reducing operational overhead via K8S Orchestration.",
-                "Optimizing resource sharing across consolidated components to reduce infrastructure operational costs by ~25%.",
+                "Led the architectural transition from distributed microservices to a modular macro-service pattern, reducing operational overhead by consolidating K8S orchestration across key service domains.",
+                "Architected a hybrid Macro-service model and resource-sharing framework that reduced infrastructure operational costs by 25%.",
                 "Increased internal system stability by improving unit test coverage from 45% to 85% through gRPC mock isolation.",
                 "Automated deployment workflows via ADO pipelines, reducing manual release overhead by ~40%."
             ],
