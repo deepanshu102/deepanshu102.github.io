@@ -307,7 +307,19 @@ class ParticleEngine {
 // --- Content Rendering ---
 function renderContent() {
     try {
-        console.log("Hydrating DOM with system content...");
+        console.info("HYDRATION_CORE // Initializing system content injection...");
+        
+        // Diagnostic Heartbeat
+        const targets = {
+            bio: !!document.getElementById('bio-text'),
+            skills: !!document.getElementById('skills-container'),
+            experience: !!document.getElementById('experience-timeline'),
+            projects: !!document.getElementById('projects-grid'),
+            commendations: !!document.getElementById('commendations-grid')
+        };
+        
+        console.info(`HYDRATION_CORE // Data Metrics: Experience[${CONTENT.experience.length}] Projects[${CONTENT.projects.length}] Skills[${CONTENT.skills.length}]`);
+        console.info("HYDRATION_CORE // DOM Targets Status:", targets);
         
         // Bio
         const bioText = document.getElementById('bio-text');

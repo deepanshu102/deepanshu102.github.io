@@ -1,10 +1,11 @@
 :root {
-    --bg-color: #050a0e;
+    --bg-color: #000814;
     --primary-cyan: #00f5ff;
     --accent-purple: #7c3aed;
     --success-green: #00ff88;
-    --text-main: #f0f4f8; /* Brighter for default readability */
-    --text-dim: #94a3b8;
+    --text-main: #e0e0e0;
+    --text-secondary: #a0aec0; /* Tertiary layer for metadata scannability */
+    --text-dim: #718096;
     
     --glow-cyan: 0 0 10px rgba(0, 245, 255, 0.5);
     --glow-green: 0 0 10px rgba(0, 255, 136, 0.5);
@@ -152,9 +153,17 @@ body {
     position: relative;
     z-index: 2;
     min-height: 100vh;
-    padding: 8rem 0;
+    padding: 12rem 0; /* Standard rhythm for deep separation */
     display: flex;
     align-items: center;
+    border-bottom: 1px solid rgba(0, 245, 255, 0.15); /* Subtle 15%-opacity neon divider */
+}
+
+/* Hero Separation Exclusion - Prevents name pushdown */
+#hero.page-section {
+    min-height: 100vh;
+    padding: 2rem 0; 
+    border-bottom: none;
 }
 
 .section-header {
@@ -174,10 +183,10 @@ body {
 .section-subtitle {
     display: block;
     font-size: 0.75rem;
-    color: var(--text-dim);
+    color: var(--text-secondary);
     letter-spacing: 0.15em;
     padding-left: 1.8rem;
-    opacity: 0.7;
+    opacity: 0.8;
     margin-top: -0.2rem;
 }
 
@@ -408,6 +417,37 @@ body {
     box-shadow: 0 0 10px var(--primary-cyan);
     border-radius: 50%;
     z-index: 2;
+}
+
+/* Experience Item Details */
+.log-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.log-company {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    color: var(--text-main);
+    letter-spacing: 0.1em;
+}
+
+.log-period {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    font-family: var(--font-mono);
+}
+
+.log-role {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    font-style: italic;
+    opacity: 0.9;
 }
 
 /* Status Badge - Pulse Protection v4 */
