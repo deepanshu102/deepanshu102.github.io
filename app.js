@@ -6,7 +6,7 @@ const CONTENT = {
     bio: "Architect of Resilience. Beyond 5.2 years of deployment metrics, I thrive in the deep-end of high-performance backend engineering. Orchestrating high-scale distributed systems isn't just a role—it's an obsessive pursuit of architectural elegance and the raw intellectual joy of building resilient cloud-native ecosystems.",
     
     email: "deepanshuofficials@gmail.com",
-    linkedin: "https://www.linkedin.com/in/bitsbytesofficial/",
+    linkedin: "https://www.linkedin.com/in/deepanshu102",
     github: "https://github.com/deepanshu102",
 
     commendations: [
@@ -101,6 +101,93 @@ const CONTENT = {
             period: "2024",
             tech: ["Golang", "Redis", "gRPC", "Kubernetes"],
             link: "#contact"
+        }
+    ],
+
+    certifications: [
+        {
+            title: "Introduction to Agent Skills",
+            organization: "Anthropic",
+            date: "Apr 2026",
+            id: "4zqrekkkin72",
+            icon: "AI"
+        },
+        {
+            title: "Claude 101",
+            organization: "Anthropic",
+            date: "Mar 2026",
+            id: "r8ecinarynyv",
+            icon: "AI"
+        },
+        {
+            title: "AI Tools Workshop",
+            organization: "Be10x",
+            date: "Apr 2026",
+            id: "0270772f-3b09-4400-b29b-1e1c61cd09971254056",
+            icon: "AI"
+        },
+        {
+            title: "Basics of Golang",
+            organization: "HackerRank",
+            date: "2024",
+            id: "HACKERRANK_VALIDATED",
+            icon: "GO"
+        },
+        {
+            title: "Blockchain with Go",
+            organization: "Udemy",
+            date: "Aug 2023",
+            id: "UC-bc032d37-524c-40bd-9388-5420b4e0295b",
+            icon: "GO"
+        },
+        {
+            title: "Spring Framework & Spring Boot",
+            organization: "Udemy",
+            date: "Jun 2020",
+            id: "UC-00e1b612-b959-4920-9ef7-7b83b210d750",
+            icon: "JAVA"
+        },
+        {
+            title: "Introduction of MongoDB",
+            organization: "Udemy",
+            date: "Apr 2023",
+            id: "UC-bd01facc-c884-4958-86fb-71f7a44bb867",
+            icon: "DB"
+        },
+        {
+            title: "GO Professional Certification",
+            organization: "Sololearn",
+            date: "May 2022",
+            id: "SOLOLEARN_GO",
+            icon: "GO"
+        },
+        {
+            title: "Node Js and Express",
+            organization: "Udemy",
+            date: "Mar 2021",
+            id: "UDEMY_NODE",
+            icon: "JS"
+        },
+        {
+            title: "Java Core",
+            organization: "Udemy",
+            date: "Jun 2019",
+            id: "UC-VZ4Z5PYE",
+            icon: "JAVA"
+        },
+        {
+            title: "Python-Django",
+            organization: "Tech Explica",
+            date: "Jul 2018",
+            id: "EXPLICATE_PY",
+            icon: "PY"
+        },
+        {
+            title: "J2EE Development",
+            organization: "Surjan Singh Memorial Society",
+            date: "Jul 2016",
+            id: "J2EE_PROFESSIONAL",
+            icon: "JAVA"
         }
     ]
 };
@@ -406,6 +493,28 @@ function renderContent() {
             console.warn("COMMS_CONTAINER_NOT_FOUND // Skipping commendation hydration.");
         }
 
+        // Certifications [NEW v13.0]
+        const certsGrid = document.getElementById('certifications-grid');
+        if (certsGrid) {
+            certsGrid.innerHTML = '';
+            CONTENT.certifications.forEach(cert => {
+                const card = document.createElement('div');
+                card.className = 'holo-card cert-card';
+                card.innerHTML = `
+                    <div class="card-inner">
+                        <div class="cert-icon">CREDENTIAL_${cert.icon}</div>
+                        <h3 class="cert-title">${cert.title}</h3>
+                        <p class="cert-org">${cert.organization} // ${cert.date}</p>
+                        <p class="cert-id">> ID: ${cert.id}</p>
+                        <div class="cert-glitch-line"></div>
+                    </div>
+                `;
+                certsGrid.appendChild(card);
+            });
+        } else {
+            console.warn("CERTS_CONTAINER_NOT_FOUND // Skipping certifications hydration.");
+        }
+
         // Projects
         const projectsGrid = document.getElementById('projects-grid');
         if (projectsGrid) {
@@ -687,6 +796,11 @@ function initSystemNavigator() {
             else if (inputVal.includes('contact') || inputVal.includes('hire') || inputVal.includes('email')) {
                 addMessage('ROUTING // Communications Uplink...');
                 const target = document.getElementById('contact');
+                if (target) window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' });
+            }
+            else if (inputVal.includes('cert') || inputVal.includes('skill') || inputVal.includes('award')) {
+                addMessage('ROUTING // Credentials Archive...');
+                const target = document.getElementById('certifications');
                 if (target) window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' });
             }
             else if (inputVal.includes('about') || inputVal.includes('bio') || inputVal.includes('who')) {

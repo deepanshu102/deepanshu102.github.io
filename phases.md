@@ -93,7 +93,7 @@
 **Contact details to wire up:**
 - Email: deepanshuofficials+pro@gmail.com
 - GitHub: github.com/deepanshu102
-- LinkedIn: linkedin.com/in/bitsbytesofficial
+- LinkedIn: linkedin.com/in/deepanshu102
 - Phone: +91 9654346513
 
 ---
@@ -126,7 +126,7 @@
 
 | Item | Status |
 |------|--------|
-| LinkedIn profile URL | ✅ Resolved — linkedin.com/in/bitsbytesofficial |
+| LinkedIn profile URL | ✅ Resolved — linkedin.com/in/deepanshu102 |
 | GitHub project links (public repos) | ❓ Confirm which projects are public — needed for Phase 2 project cards |
 | Profile photo in repo | ✅ Confirmed loading on live site |
 | v1 legacy files | 📦 Move existing files to `/v1-legacy/` before starting Phase 1 |
@@ -139,7 +139,7 @@
 
 | Seed | Description |
 |------|-------------|
-| 🌱 LinkedIn deep-link | Wire all "connect" CTAs directly to linkedin.com/in/bitsbytesofficial |
+| 🌱 LinkedIn deep-link | Wire all "connect" CTAs directly to linkedin.com/in/deepanshu102 |
 | 🌱 Public repo validation | Audit which of the 6 projects have public GitHub repos; add live links to project cards |
 
 ---

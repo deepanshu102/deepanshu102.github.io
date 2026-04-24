@@ -2,7 +2,7 @@ export const CONTENT = {
     bio: "Senior Software Engineer with 5.2+ years of experience in developing high-end back-end cloud applications and services. Specializing in Golang, Distributed Systems, and Microservices Architecture with a focus on high-scale enterprise transformations.",
     
     email: "deepanshuofficials@gmail.com",
-    linkedin: "https://www.linkedin.com/in/bitsbytesofficial/",
+    linkedin: "https://www.linkedin.com/in/deepanshu102",
     github: "https://github.com/deepanshu102",
 
     commendations: [
@@ -97,6 +97,93 @@ export const CONTENT = {
             period: "2024",
             tech: ["Golang", "Redis", "gRPC", "Kubernetes"],
             link: "#contact"
+        }
+    ],
+
+    certifications: [
+        {
+            title: "Introduction to Agent Skills",
+            organization: "Anthropic",
+            date: "Apr 2026",
+            id: "4zqrekkkin72",
+            icon: "AI"
+        },
+        {
+            title: "Claude 101",
+            organization: "Anthropic",
+            date: "Mar 2026",
+            id: "r8ecinarynyv",
+            icon: "AI"
+        },
+        {
+            title: "AI Tools Workshop",
+            organization: "Be10x",
+            date: "Apr 2026",
+            id: "0270772f-3b09-4400-b29b-1e1c61cd09971254056",
+            icon: "AI"
+        },
+        {
+            title: "Basics of Golang",
+            organization: "HackerRank",
+            date: "2024",
+            id: "HACKERRANK_VALIDATED",
+            icon: "GO"
+        },
+        {
+            title: "Blockchain with Go",
+            organization: "Udemy",
+            date: "Aug 2023",
+            id: "UC-bc032d37-524c-40bd-9388-5420b4e0295b",
+            icon: "GO"
+        },
+        {
+            title: "Spring Framework & Spring Boot",
+            organization: "Udemy",
+            date: "Jun 2020",
+            id: "UC-00e1b612-b959-4920-9ef7-7b83b210d750",
+            icon: "JAVA"
+        },
+        {
+            title: "Introduction of MongoDB",
+            organization: "Udemy",
+            date: "Apr 2023",
+            id: "UC-bd01facc-c884-4958-86fb-71f7a44bb867",
+            icon: "DB"
+        },
+        {
+            title: "GO Professional Certification",
+            organization: "Sololearn",
+            date: "May 2022",
+            id: "SOLOLEARN_GO",
+            icon: "GO"
+        },
+        {
+            title: "Node Js and Express",
+            organization: "Udemy",
+            date: "Mar 2021",
+            id: "UDEMY_NODE",
+            icon: "JS"
+        },
+        {
+            title: "Java Core",
+            organization: "Udemy",
+            date: "Jun 2019",
+            id: "UC-VZ4Z5PYE",
+            icon: "JAVA"
+        },
+        {
+            title: "Python-Django",
+            organization: "Tech Explica",
+            date: "Jul 2018",
+            id: "EXPLICATE_PY",
+            icon: "PY"
+        },
+        {
+            title: "J2EE Development",
+            organization: "Surjan Singh Memorial Society",
+            date: "Jul 2016",
+            id: "J2EE_PROFESSIONAL",
+            icon: "JAVA"
         }
     ]
 };
