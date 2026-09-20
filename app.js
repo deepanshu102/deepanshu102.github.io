@@ -257,39 +257,12 @@ function initCircuitBackground() {
     layer.innerHTML = svgHtml;
 }
 
-// --- Terminal Boot Sequence ---
-async function runBootSequence() {
-    const textTarget = document.getElementById('terminal-boot-text');
+// --- Direct Landing (Instant Profile Access) ---
+function runBootSequence() {
     const loader = document.getElementById('loader-overlay');
     const main = document.getElementById('main-content');
-
-    for (const line of CONFIG.bootSequence) {
-        const lineElement = document.createElement('div');
-        textTarget.appendChild(lineElement);
-        
-        // Check for reduced motion early
-        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-            lineElement.textContent = line;
-            continue;
-        }
-
-        // Typewriter effect per line
-        for (let i = 0; i < line.length; i++) {
-            lineElement.textContent += line[i];
-            await new Promise(r => setTimeout(r, 20));
-        }
-        await new Promise(r => setTimeout(r, 200));
-    }
-
-    // Fade out loader
-    gsap.to(loader, {
-        opacity: 0,
-        duration: 1,
-        onComplete: () => {
-            loader.style.display = 'none';
-            gsap.to(main, { opacity: 1, duration: 1.5 });
-        }
-    });
+    if (loader) loader.style.display = 'none';
+    if (main) main.style.opacity = '1';
 }
 
 // --- Three.js Particle Engine ---
@@ -830,12 +803,15 @@ function initSystemNavigator() {
     });
 }
 
-// --- Boot Lifecycle [Expert Pass] ---
-(async function() {
+// --- Boot Lifecycle [Direct Landing Pass] ---
+(function() {
     try {
-        console.log("System initialization initiated...");
+        console.log("Welcome to profile // Direct landing initiated...");
+        const main = document.getElementById('main-content');
+        if (main) main.style.opacity = '1';
+        
         initCircuitBackground();
-        await runBootSequence();
+        runBootSequence();
         renderContent();
         initAnimations();
     } catch (err) {
@@ -850,12 +826,12 @@ function initSystemNavigator() {
         initContactForm();
         new ParticleEngine();
         
-        // Final sanity for the overlay
+        // Final sanity for instant view
         const overlay = document.getElementById('loader-overlay');
         const main = document.getElementById('main-content');
         if (overlay) overlay.style.display = 'none';
-        if (main) main.style.opacity = 1;
+        if (main) main.style.opacity = '1';
 
-        console.log("System online.");
+        console.log("Welcome to profile // Online.");
     }
 })();

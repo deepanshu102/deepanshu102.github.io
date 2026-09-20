@@ -35,33 +35,14 @@ body {
     -webkit-hyphens: none;
 }
 
-/* Loader Overlay */
+/* Direct Landing - No Loader */
 #loader-overlay {
-    position: fixed;
-    inset: 0;
-    background: var(--bg-color);
-    z-index: 1000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem;
+    display: none !important;
 }
 
-.terminal-container {
-    width: 100%;
-    max-width: 800px;
-    font-size: 1.1rem;
-    color: var(--primary-cyan);
-    text-shadow: var(--glow-cyan);
-}
-
-.cursor {
-    display: inline-block;
-    animation: blink 1s step-end infinite;
-}
-
-@keyframes blink {
-    50% { opacity: 0; }
+#main-content {
+    opacity: 1 !important;
+    transition: opacity 0.3s ease;
 }
 
 /* Background Layers */
