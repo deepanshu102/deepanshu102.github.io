@@ -600,25 +600,45 @@ function initGlitchEffect() {
         .to(heroText, { skewX: 0, duration: 0.1 });
 }
 
-// --- Counter Logic ---
+// --- Counter Logic (Reliable IntersectionObserver Animation) ---
 function initSystemCounters() {
     const metrics = document.querySelectorAll('.metric-value');
-    metrics.forEach(metric => {
+    if (!metrics.length) return;
+
+    const animateMetric = (metric) => {
         const target = parseInt(metric.getAttribute('data-target'));
         if (isNaN(target)) return;
 
-        gsap.to(metric, {
-            scrollTrigger: {
-                trigger: metric,
-                start: "top 80%", /* Accelerated trigger v12.0 */
-                once: true
-            },
-            innerHTML: target,
-            duration: 2,
-            snap: { innerHTML: 1 },
-            ease: "power2.out"
+        if (typeof gsap !== 'undefined') {
+            metric.textContent = '0';
+            gsap.to(metric, {
+                innerHTML: target,
+                duration: 1.8,
+                snap: { innerHTML: 1 },
+                ease: "power2.out"
+            });
+        } else {
+            metric.textContent = target;
+        }
+    };
+
+    if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateMetric(entry.target);
+                    obs.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15 });
+
+        metrics.forEach(metric => observer.observe(metric));
+    } else {
+        metrics.forEach(metric => {
+            const target = metric.getAttribute('data-target');
+            if (target) metric.textContent = target;
         });
-    });
+    }
 }
 
 // --- Project Interaction Hardening v12.0 ---
