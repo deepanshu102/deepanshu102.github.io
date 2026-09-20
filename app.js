@@ -3,7 +3,7 @@
  * Consolidated for fail-safe rendering in all environments.
  */
 const CONTENT = {
-    bio: "Architect of Resilience. Beyond 5.2 years of deployment metrics, I thrive in the deep-end of high-performance backend engineering. Orchestrating high-scale distributed systems isn't just a role—it's an obsessive pursuit of architectural elegance and the raw intellectual joy of building resilient cloud-native ecosystems.",
+    bio: "Senior Backend Engineer with 6+ years of experience architecting high-throughput, distributed microservices and cloud systems. Specialized in Go (Golang), gRPC / Protobuf, and AWS with proven impact in microservice system design (HLD/LLD), runtime/latency optimization, automated data reconciliation, and full-stack observability via Prometheus and Grafana.",
     
     email: "deepanshuofficials@gmail.com",
     linkedin: "https://www.linkedin.com/in/deepanshu102",
@@ -32,14 +32,14 @@ const CONTENT = {
             company: "KAIROS TECHNOLOGIES",
             role: "Senior Software Engineer",
             period: "Nov 2024 – Present",
-            location: "Pune, India",
+            location: "Remote, India",
             points: [
-                "Led the architectural transition from distributed microservices to a modular macro-service pattern, reducing operational overhead by consolidating K8S orchestration across key service domains.",
-                "Architected a hybrid Macro-service model and resource-sharing framework that reduced infrastructure operational costs by 25%.",
-                "Increased internal system stability by improving unit test coverage from 45% to 85% through gRPC mock isolation.",
-                "Automated deployment workflows via ADO pipelines, reducing manual release overhead by ~40%."
+                "Authored HLD/LLD specifications for 5 distributed microservices, mapping inter-service flows, Dead-Letter Queues (DLQ), automated S3-to-DB cron ingestion, and third-party wallet integrations.",
+                "Engineered 2 backend microservices in Go using gRPC and Protobuf (Bazel, AWS) for the mobile app; slashed API latency by flattening and streamlining JSON response payloads.",
+                "Halved data crunch time from 6h to 3h (50%) and cut cron execution from 3h to 20m; built automated deduplication endpoints and recurring jobs to resolve multi-location contract collisions.",
+                "Instrumented Prometheus metrics and designed Grafana dashboards for API triage, EV remote charging session states (success/failure), sub-CPO/location filters, and dual-tariff tracking."
             ],
-            tech: ["Golang", "gRPC", "MySQL", "Node.js", "Kubernetes", "ADO"]
+            tech: ["Go", "gRPC", "Protobuf", "Bazel", "AWS (S3, DLQ)", "Prometheus", "Grafana", "MySQL", "Docker", "Kubernetes", "Azure DevOps"]
         },
         {
             company: "ASCENDION ENGINEERING",
@@ -47,59 +47,59 @@ const CONTENT = {
             period: "Nov 2022 – Oct 2024",
             location: "Bangalore, India",
             points: [
-                "Successfully migrated a global healthcare product from a classic monolith to a cloud-native architecture.",
-                "Managed a complex database transformation involving 100+ tables and millions of records with 100% cloud deployment uptime.",
-                "Established a robust testing framework with Testify, serving as the gold standard for all subsequent service migrations.",
-                "Streamlined CI/CD using GitLab and Harness, implementing blue-green deployment strategies that reduced rollback time from hours to minutes.",
+                "Migrated 200K+ healthcare records to AWS cloud databases via automated ETL and schema mapping pipelines with zero downtime.",
+                "Engineered modular REST microservices in Go using Gorilla/Mux, GORM, and MongoDB; standardized unit testing with Testify and automated CI/CD via GitLab CI and Harness.",
+                "Established robust testing frameworks with Testify and mocking, serving as the gold standard for all subsequent service migrations.",
+                "Streamlined blue-green deployment strategies, reducing rollback time from hours to minutes."
             ],
-            tech: ["Golang", "GitLab", "Gorilla/Mux", "MongoDB", "Gorm", "Harness"]
+            tech: ["Go (Golang)", "REST APIs", "Gorilla/Mux", "MongoDB", "GORM", "Testify", "Docker", "AWS", "GitLab CI", "Harness"]
         },
         {
             company: "COFORGE",
             role: "Senior Software Engineer",
             period: "July 2020 – Nov 2022",
-            location: "G.Noida, India",
+            location: "Greater Noida, India",
             points: [
-                "Architected a Banking Audit System that processed 1M+ transactions daily using a Microservices mesh, improving data integrity by 30%.",
+                "Engineered core transaction and ledger engines on the Evo SaaS platform, powering pawn-broking workflows across 150+ retail dealer branches.",
+                "Implemented asynchronous task prioritization and SLA queue frameworks; decomposed monolithic features into scalable Go and Spring Boot services on AWS.",
                 "Built an API caching layer using Go and Redis that reduced service latency by 40% for high-traffic endpoints.",
-                "Engineered a digital platform for pawn-broking dealers with a Task Prioritization and SLA framework that eliminated process bottlenecks.",
                 "Optimized backend flows for global stakeholders using AWS Lambda and DynamoDB for event-driven processing."
             ],
-            tech: ["Golang", "Echo", "Redis", "AWS", "DynamoDB", "Java", "Spring Boot", "MySQL"]
+            tech: ["Go (Golang)", "Echo", "TypeScript", "AWS (Lambda, DynamoDB, API Gateway, CloudWatch)", "Java", "Spring Boot", "MySQL"]
         },
         {
             company: "NIIT TECHNOLOGIES",
             role: "Trainee Java Developer",
             period: "Jan 2020 – July 2020",
-            location: "G.Noida, India",
+            location: "Greater Noida, India",
             points: [
-                "Assisted in developing business platforms for pawn-broking dealers with a focus on secure transaction handling.",
-                "Developed documentation templates for process model mapping to improve onboarding efficiency."
+                "Developed 12+ REST API endpoints using Java, Spring Boot, and MySQL; built responsive Angular UI components with serverless AWS Lambda event triggers.",
+                "Assisted in developing business platforms for dealers with a focus on secure transaction handling and process model mapping."
             ],
-            tech: ["Java", "Spring Boot", "JPA", "MySQL", "Golang", "AWS"]
+            tech: ["Java", "Spring Boot", "JPA/Hibernate", "MySQL", "AWS Lambda", "Angular", "Golang"]
         }
     ],
 
     projects: [
         {
-            title: "BANKING SYSTEM MICROSERVICES",
-            description: "PROBLEM: Legacy monolithic ledger systems caused high latency and data sync issues. SOLUTION: Architected an event-driven microservices mesh with Go, Redis caching, and real-time ledger sync. RESULT: Reduced API latency by 40% while processing 1M daily transactions with 30% improved data integrity.",
-            period: "2021 – 2022",
-            tech: ["Golang", "Echo Server", "Redis", "AWS DynamoDB", "Lambda"],
+            title: "EV CHARGING BACKEND & INTEGRATION PLATFORM",
+            description: "PROBLEM: Distributed EV charging networks suffered from contract data collisions, slow multi-hour crunch jobs, and unmonitored charging session states. SOLUTION: Designed HLD/LLD for Go microservices using gRPC/Protobuf, automated S3-to-DB cron ingestion, OCPI-based CPO integrations, and Prometheus/Grafana observability. RESULT: Halved data crunch time by 50% (6h to 3h), cut cron runtime to 20m, eliminated location contract collisions, and enabled real-time dual-tariff tracking.",
+            period: "Nov 2024 – Present",
+            tech: ["Golang", "gRPC", "Protobuf", "AWS", "Prometheus", "Grafana", "Kubernetes", "Docker", "MySQL"],
             link: "#contact"
         },
         {
-            title: "HEALTHCARE CLOUD MIGRATION",
-            description: "PROBLEM: High-compliance healthcare data was locked in legacy on-prem servers. SOLUTION: Engineered a zero-downtime migration pipeline to AWS using MongoDB and Gorm. RESULT: Successfully transformed millions of records with 100% cloud deployment uptime and HIPAA-compliant data isolation.",
+            title: "HEALTHCARE CLOUD MIGRATION & BACKEND SERVICES",
+            description: "PROBLEM: High-compliance healthcare data was siloed in legacy architectures, requiring complex database transformations and zero-downtime migration. SOLUTION: Engineered automated ETL pipelines and modular REST microservices in Go using Gorilla/Mux, GORM, and MongoDB with Testify test mocking. RESULT: Migrated 200K+ healthcare records to AWS with 100% cloud deployment uptime, improved code test coverage, and automated deployment via GitLab CI & Harness.",
             period: "2022 – 2024",
-            tech: ["Golang", "MongoDB", "Gorm", "Gorilla/Mux"],
+            tech: ["Golang", "REST APIs", "Gorilla/Mux", "GORM", "MongoDB", "AWS", "Docker", "Testify", "Harness"],
             link: "#contact"
         },
         {
-            title: "ECOMMERCE BACKEND CONSOLIDATION",
-            description: "PROBLEM: Distributed microservices caused high operational overhead and cross-service latency. SOLUTION: Consolidated 12+ legacy services into a hybrid Macro-service model (Order, Inventory, User) using K8S Orchestration and a Redis Caching layer. RESULT: Lowered infrastructure costs by 25% and significantly reduced inter-service overhead.",
-            period: "2024",
-            tech: ["Golang", "Redis", "gRPC", "Kubernetes"],
+            title: "BANKING TRANSACTION & LEDGER PROCESSING PLATFORM",
+            description: "PROBLEM: Monolithic ledger systems caused processing bottlenecks and SLA delays across high-volume retail financial branches. SOLUTION: Engineered core transaction and ledger engines with asynchronous task prioritization and SLA queue frameworks using Go, Java/Spring Boot, and AWS serverless (Lambda, DynamoDB). RESULT: Scaled transaction processing across 150+ retail branches, reduced service latency by 40%, and achieved high fault-tolerance with zero ledger sync discrepancies.",
+            period: "2020 – 2022",
+            tech: ["Golang", "Java", "Spring Boot", "AWS Lambda", "DynamoDB", "REST APIs", "SQL", "MySQL"],
             link: "#contact"
         }
     ],
