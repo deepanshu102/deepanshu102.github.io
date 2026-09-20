@@ -1,5 +1,5 @@
 export const CONTENT = {
-    bio: "Senior Backend Engineer with 6+ years of experience architecting high-throughput, distributed microservices and cloud systems. Specialized in Go (Golang), gRPC / Protobuf, and AWS with proven impact in microservice system design (HLD/LLD), runtime/latency optimization, automated data reconciliation, and full-stack observability via Prometheus and Grafana.",
+    bio: "Senior Backend Engineer with 6+ years of experience architecting high-throughput, distributed microservices and cloud systems. Specialized in Go (Golang), AWS, Microservices, Distributed Systems, gRPC, and REST APIs with proven impact in microservice system design (HLD/LLD), runtime/latency optimization, automated data reconciliation, and full-stack observability via Prometheus and Grafana.",
     
     email: "deepanshuofficials@gmail.com",
     linkedin: "https://www.linkedin.com/in/deepanshu102",
